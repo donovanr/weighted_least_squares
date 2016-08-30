@@ -58,7 +58,9 @@ shinyServer(function(input, output) {
           weights = w,
           start = starting_vals(),
           lower = lower_limits(),
-          algorithm = "port")
+          # algorithm = "port",
+          control=nls.control(maxiter=1000)
+          )
     })
     
     output$contents <- renderTable({
